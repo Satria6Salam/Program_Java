@@ -1,0 +1,30 @@
+📌 Apa Itu Fungsi Lambda dalam Java?
+Fungsi Lambda adalah fitur dalam Java 8 yang memungkinkan kita menulis kode yang lebih ringkas dan 
+ekspresif untuk merepresentasikan fungsi anonim (tanpa nama). Fungsi ini biasanya digunakan untuk 
+menyederhanakan kode yang menggunakan antarmuka fungsional (functional interface) seperti Comparator, 
+Runnable, Predicate, dan Consumer.
+
+📌 Bentuk Umum Lambda
+Sintaks dasar fungsi lambda adalah:
+
+    (parameter) -> { ekspresi atau blok kode }
+
+    * parameter → Daftar parameter yang diterima oleh fungsi.
+    * -> → Operator lambda yang memisahkan parameter dan isi fungsi.
+    * { ekspresi atau blok kode } → Badan fungsi, bisa satu atau beberapa pernyataan.
+
+📌 Kapan Menggunakan Lambda?
+    * Menggunakan Functional Interface
+    Lambda hanya bisa digunakan dengan interface yang memiliki satu metode abstrak, yang disebut Functional Interface.
+    * Kode Lebih Ringkas
+    Mengurangi penggunaan Anonymous Class yang panjang.
+    * Pemrograman Fungsional
+    Cocok untuk operasi seperti filtering, mapping, dan reducing pada Stream API.
+
+📌 Kesimpulan
+✔ Fungsi Lambda menyederhanakan kode dengan ekspresi yang lebih pendek dan jelas.
+✔ Hanya bekerja dengan Functional Interface (interface dengan satu metode abstrak).
+✔ Meningkatkan keterbacaan kode, terutama dalam penggunaan API seperti Stream dan Threading.
+
+🚀 Dengan lambda, Java menjadi lebih modern dan mendukung pemrograman fungsional!
+

@@ -1,0 +1,107 @@
+Metode matches() dalam Java digunakan untuk memeriksa apakah sebuah string sesuai dengan pola (pattern) 
+tertentu yang ditentukan menggunakan regular expressions (regex). Pola ini bisa digunakan untuk berbagai 
+validasi, seperti memeriksa format email, nomor telepon, nomor rekening, atau bahkan hanya untuk mengecek 
+apakah input terdiri dari karakter tertentu (seperti huruf atau angka).
+
+    > Mengembalikan true jika string sesuai dengan pola regex.
+    > Mengembalikan false jika tidak sesuai.
+
+    format umum > string.matches(regex)
+    > string: String yang ingin kamu periksa.
+    > regex: Pola (pattern) yang digunakan untuk mencocokkan string.
+
+Aturan Dasar dalam Regular Expressions (regex)
+1. Karakter biasa:
+    > a, b, 1, A, z: Ini akan mencocokkan karakter-karakter tersebut secara literal.
+
+2. Karakter khusus (Metakarakter):
+    > .: Mencocokkan sebarang karakter (kecuali newline).
+    > ^: Awal dari string.
+    > $: Akhir dari string.
+    > []: Mencocokkan salah satu karakter yang ada di dalam tanda kurung.
+        Contoh: [a-z] mencocokkan huruf kecil dari a sampai z.
+        Contoh: [0-9] mencocokkan digit angka.
+    > *: Mencocokkan 0 atau lebih dari karakter sebelumnya.
+    > +: Mencocokkan 1 atau lebih dari karakter sebelumnya.
+    > ?: Mencocokkan 0 atau 1 dari karakter sebelumnya (opsional).
+    > {n,m}: Mencocokkan antara n hingga m kali dari karakter sebelumnya.
+
+3. Karakter Pengendali Khusus:
+    > \d: Mencocokkan digit (angka 0-9).
+    > \D: Mencocokkan karakter yang bukan digit.
+    > \w: Mencocokkan huruf, angka, atau garis bawah (alphanumeric).
+    > \W: Mencocokkan karakter yang bukan alphanumeric.
+    > \s: Mencocokkan spasi (termasuk tab dan newline).
+    > \S: Mencocokkan karakter bukan spasi.
+
+
+Regex	                    Fungsi	                                Contoh
+\\d	                        Angka (0-9)	                            "1".matches("\\d") ✅
+\\d+	                    Satu atau lebih angka	                "123".matches("\\d+") ✅
+\\d{5}	                    Harus 5 digit angka	                    "12345".matches("\\d{5}") ✅
+[a-z]	                    Huruf kecil (a-z)	                    "a".matches("[a-z]") ✅
+[A-Z]	                    Huruf besar (A-Z)	                    "A".matches("[A-Z]") ✅
+[a-zA-Z]+	                Hanya huruf (besar & kecil)	            "Java".matches("[a-zA-Z]+") ✅
+\\w+	                    Huruf, angka, atau underscore (a-z, A-Z, 0-9, _)	"Hello_123".matches("\\w+") ✅
+\\s	                        Spasi	                                " ".matches("\\s") ✅
+[a-zA-Z ]+	                Hanya huruf & spasi	                    "John Doe".matches("[a-zA-Z ]+") ✅
+[^a-zA-Z0-9]	            Karakter selain huruf & angka	        "@".matches("[^a-zA-Z0-9]") ✅
+.*	                        Bisa apa saja (karakter apapun, 0 atau lebih)	"hello123!".matches(".*") ✅
+
+
+Contoh
+matches("(?=.*[a-zA-Z])(?=.*\\d).{8,}")
+
+    > (?=.*[a-zA-Z])
+        -> (?= ... ) → Ini adalah positive lookahead, yang berarti memastikan bahwa ada 
+        pola tertentu dalam string tanpa benar-benar mengonsumsinya.
+
+        -> .*[a-zA-Z] → .* berarti sembarang karakter berulang 
+        (termasuk tidak ada karakter sekalipun), diikuti oleh [a-zA-Z] yang berarti 
+        setidaknya harus ada satu huruf (baik huruf kecil maupun besar).
+
+        -> Maknanya: String harus mengandung setidaknya satu huruf.
+    
+    > (?=.*\d)
+        -> (?= ... ) → Positive lookahead kedua.
+        -> .*\d → .* berarti sembarang karakter apa pun, lalu \d adalah digit (0-9).
+        -> Maknanya: String harus mengandung setidaknya satu angka.
+
+    > .{8,}
+        -> . → Mewakili karakter apa pun kecuali newline.
+        -> {8,} → Menunjukkan bahwa karakter sebelumnya (yaitu .) harus muncul minimal 8 kali.
+        -> Maknanya: String harus memiliki minimal 8 karakter.
+
+        -> Dalam ekspresi .{8,}, tanda koma (,) memiliki makna khusus dalam quantifier {min, max} 
+        yang digunakan untuk menentukan jumlah pengulangan karakter atau grup sebelumnya.
+            => Variasi Lainnya dari {min,max}:
+                a{3} → Harus ada tepat 3 huruf 'a' (aaa).
+                a{3,5} → Harus ada minimal 3 dan maksimal 5 huruf 'a' (aaa, aaaa, atau aaaaa).
+                a{3,} → Harus ada minimal 3 huruf 'a', tapi boleh lebih banyak (aaa, aaaa, aaaaaa, dst.).
+
+matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")
+
+    > ^ dan $
+        -> ^ → Menandakan awal string (email harus dimulai dari sini).
+        -> $ → Menandakan akhir string (email harus berakhir di sini).
+        -> Ini memastikan seluruh string cocok dengan format yang diharapkan.
+
+    > [a-zA-Z0-9_+&*-]+
+        -> [a-zA-Z0-9_+&*-] → Memungkinkan huruf besar/kecil (a-z, A-Z), angka (0-9), dan karakter spesial (_+&*-).
+        -> + → Menandakan bahwa karakter ini harus ada minimal satu kali.
+
+    > (?:\\.[a-zA-Z0-9_+&*-]+)*
+        -> (?: ... ) → Non-capturing group, digunakan agar tidak mengambil hasilnya sebagai grup terpisah.
+        -> \. → Memastikan dot (.) diperbolehkan, tetapi tidak boleh berada di awal atau akhir username.
+        -> [a-zA-Z0-9_+&*-]+ → Setelah titik (.), harus ada huruf, angka, atau karakter spesial yang diperbolehkan.
+        -> * → Bagian ini opsional dan bisa berulang, memungkinkan format seperti name.surname@example.com.
+
+    > (?:[a-zA-Z0-9-]+\.)+
+        -> (?: ... )+ → Non-capturing group, harus muncul minimal sekali.
+        -> [a-zA-Z0-9-]+ → Domain name harus berisi huruf (a-z, A-Z), angka (0-9), atau tanda hubung (-).
+        -> \. → Memastikan ada titik (.) sebagai pemisah antara domain utama dan TLD (misalnya example.com).
+
+    > [a-zA-Z]{2,7}
+        -> [a-zA-Z] → Hanya huruf yang diperbolehkan.
+        -> {2,7} → Harus memiliki minimal 2 dan maksimal 7 karakter.
+        -> Contoh valid: .com (3 huruf), .org (3 huruf), .xyz (3 huruf), .museum (6 huruf).

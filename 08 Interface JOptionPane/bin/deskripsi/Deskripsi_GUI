@@ -1,0 +1,31 @@
+1. Apa Itu GUI?
+GUI (Graphical User Interface) adalah antarmuka pengguna berbasis grafis.
+Pengguna bisa berinteraksi dengan program lewat tombol, menu, jendela, ikon, dll.
+
+Di Java, GUI bisa dibuat dengan:
+
+    AWT (Abstract Window Toolkit) → GUI dasar, lebih tua.
+
+    Swing → GUI modern, lebih fleksibel dan banyak digunakan.
+
+    JavaFX → GUI modern berbasis scene graph, untuk aplikasi lebih kompleks.
+
+2. Library GUI di Java
+    AWT (java.awt.*)
+
+    Swing (javax.swing.*)
+
+    JavaFX (javafx.*) — materi lebih lanjut.
+
+3. Komponen Dasar di Swing
+    Komponen	    Fungsi
+    JFrame	        Jendela utama
+    JLabel	        Menampilkan teks atau gambar
+    JButton	        Tombol
+    JTextField	    Input teks satu baris
+    JTextArea	    Input teks banyak baris
+    JCheckBox	    Pilihan kotak centang
+    JRadioButton	Pilihan opsi tunggal
+    JComboBox	    Dropdown menu
+    JList	        Daftar pilihan
+    JPanel	        Kontainer untuk mengelompokkan komponen

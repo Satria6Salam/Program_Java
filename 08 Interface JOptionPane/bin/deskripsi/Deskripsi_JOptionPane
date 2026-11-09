@@ -1,0 +1,46 @@
+1. Pengertian JOptionPane
+JOptionPane adalah kelas dalam Java yang termasuk dalam paket javax.swing. 
+Kelas ini digunakan untuk menampilkan dialog box (kotak dialog) yang interaktif, 
+seperti pesan informasi, peringatan, input dari pengguna, atau konfirmasi. 
+JOptionPane memudahkan developer untuk berinteraksi dengan pengguna melalui 
+antarmuka grafis (GUI) tanpa perlu membuat komponen GUI secara manual.
+
+2. Tujuan JOptionPane
+    > Menyediakan cara cepat dan mudah untuk menampilkan pesan atau menerima input dari pengguna.
+
+    > Membuat aplikasi lebih interaktif dengan antarmuka grafis sederhana.
+
+    > Mengurangi kompleksitas dalam pembuatan dialog box secara manual.
+
+3. Fungsi JOptionPane
+    > Menampilkan pesan informasi (showMessageDialog).
+
+    > Meminta input dari pengguna (showInputDialog).
+
+    > Menampilkan dialog konfirmasi (showConfirmDialog).
+
+    > Menampilkan dialog opsi (showOptionDialog).
+
+4. Fitur-Fitur JOptionPane
+    > Dialog Pesan: Menampilkan pesan informasi, peringatan, atau error.
+
+    > Dialog Input: Memungkinkan pengguna memasukkan data teks.
+
+    > Dialog Konfirmasi: Menanyakan konfirmasi kepada pengguna (ya/tidak/batal).
+
+    > Dialog Opsi: Menampilkan beberapa pilihan yang dapat dipilih pengguna.
+
+    > Customizable: Dapat disesuaikan dengan ikon, judul, dan pesan tertentu.
+
+5. Kekurangan JOptionPane
+    > Terbatasnya Customisasi: Meskipun mudah digunakan, JOptionPane memiliki keterbatasan dalam hal customisasi tampilan.
+
+    > Tidak Cocok untuk Aplikasi Kompleks: Untuk aplikasi dengan antarmuka yang lebih kompleks, JOptionPane mungkin tidak cukup.
+
+    > Bergantung pada Swing: JOptionPane adalah bagian dari Swing, yang sudah jarang digunakan dalam pengembangan modern (banyak beralih ke JavaFX).
+
+Metode	                            Fungsi
+showMessageDialog	                Menampilkan pesan informasi, peringatan, atau error.
+showInputDialog	                    Meminta pengguna memasukkan data teks.
+showConfirmDialog	                Menanyakan konfirmasi kepada pengguna (ya/tidak/batal).
+showOptionDialog	                Menampilkan beberapa pilihan yang dapat dipilih.
