@@ -1,0 +1,212 @@
+1. asList(T... a):
+Metode ini mengubah array menjadi daftar (List) yang berukuran tetap. 
+Daftar yang dihasilkan akan terhubung langsung dengan array yang diberikan, 
+sehingga perubahan pada daftar akan mempengaruhi array dan sebaliknya. 
+
+2. binarySearch(byte[] a, byte key):
+
+Metode ini mencari nilai key dalam array byte a menggunakan algoritma pencarian biner. 
+Array harus dalam keadaan terurut (sorted) sebelum melakukan pencarian. 
+Jika nilai ditemukan, metode ini mengembalikan indeks dari nilai tersebut; jika tidak, 
+mengembalikan nilai negatif yang menunjukkan posisi di mana nilai tersebut dapat disisipkan.
+
+3. binarySearch(byte[] a, int fromIndex, int toIndex, byte key):
+Metode ini mirip dengan yang sebelumnya, tetapi memungkinkan pencarian dalam rentang tertentu dari array, 
+yaitu dari fromIndex hingga toIndex. Ini berguna jika Anda hanya ingin mencari dalam bagian tertentu dari array.
+
+4. binarySearch(char[] a, char key):
+Metode ini mencari nilai key dalam array karakter a menggunakan algoritma pencarian biner. 
+Sama seperti sebelumnya, array harus terurut. Jika nilai ditemukan, mengembalikan indeks; jika tidak, 
+mengembalikan nilai negatif.
+
+5. binarySearch(Object[] a, int fromIndex, int toIndex, Object key)
+Metode ini mencari objek key dalam rentang tertentu dari array objek a menggunakan algoritma pencarian biner. 
+Array harus terurut, dan jika objek ditemukan, metode ini mengembalikan indeksnya; jika tidak, mengembalikan nilai negatif 
+yang menunjukkan posisi di mana objek tersebut dapat disisipkan.
+
+6. short : Tipe data short adalah integer komplemen dua bertanda 16-bit. 
+Nilai minimumnya adalah -32.768 dan nilai maksimumnya adalah 32.767 (inklusif).
+
+7. Pencarian Biner: Algoritma pencarian biner bekerja dengan membagi array yang terurut menjadi dua bagian dan membandingkan 
+nilai yang dicari dengan elemen tengah. Jika nilai yang dicari lebih kecil dari elemen tengah, pencarian dilanjutkan di bagian kiri; 
+jika lebih besar, pencarian dilanjutkan di bagian kanan. Proses ini diulang hingga nilai ditemukan atau hingga tidak ada elemen yang 
+tersisa untuk dicari.
+
+8. binarySearch(T[] a, int fromIndex, int toIndex, T key, Comparator<? super T> c)
+Metode ini mencari objek key dalam rentang tertentu dari array a menggunakan algoritma pencarian biner dan membandingkannya dengan 
+menggunakan Comparator yang diberikan. Array harus terurut sesuai dengan kriteria yang ditentukan oleh Comparator.
+
+9. binarySearch(T[] a, T key, Comparator<? super T> c)
+Metode ini mencari objek key dalam seluruh array a menggunakan algoritma pencarian biner dan membandingkannya dengan menggunakan 
+Comparator yang diberikan. Array harus terurut sesuai dengan kriteria yang ditentukan oleh Comparator.
+
+10. copyOf(boolean[] original, int newLength)
+Metode ini menyalin array boolean yang ditentukan, memotong atau mengisi dengan false (jika perlu) sehingga salinannya 
+memiliki panjang yang ditentukan. Jika newLength lebih besar dari panjang original, elemen yang baru ditambahkan akan diisi dengan false.
+
+11. Pencarian Biner dengan Comparator: Metode pencarian biner yang menggunakan Comparator memungkinkan Anda untuk menentukan cara membandingkan 
+elemen dalam array. Ini berguna ketika Anda ingin mencari objek yang tidak dapat dibandingkan secara langsung (misalnya, objek kustom) 
+atau ketika Anda ingin menggunakan kriteria tertentu untuk membandingkan elemen.
+
+12. Comparator.naturalOrder()
+Comparator.naturalOrder() adalah metode statis dalam antarmuka Comparator di Java yang mengembalikan Comparator default untuk melakukan 
+pengurutan sesuai dengan urutan alami (natural ordering) dari elemen-elemen yang dibandingkan.
+
+    Cara Kerja Comparator.naturalOrder()
+    > Menggunakan urutan alami dari tipe data yang diberikan.
+    > Hanya bekerja pada objek yang mengimplementasikan antarmuka Comparable<T>, seperti String, Integer, Double, LocalDate, dll.
+    > Mengembalikan Comparator<T> yang membandingkan elemen dengan cara yang sama seperti metode compareTo() pada Comparable<T>.
+
+13. copyOf(U[] original, int newLength, Class<? extends T[]> newType)
+Menyalin array dengan panjang yang ditentukan dan tipe yang dapat diubah.
+    > Integer[] bisa dikonversi menjadi Number[], karena Integer adalah subclass dari Number.
+    > String[] bisa dikonversi ke Object[], karena String adalah subclass dari Object.
+    > Integer dan Double bukan dalam hubungan pewarisan langsung, sehingga Java tidak bisa mengonversinya begitu saja.
+
+14. copyOfRange(byte[] original, int from, int to)	Menyalin rentang elemen dari array bertipe byte[].
+
+15. copyOfRange(T[] original, int from, int to)	Menyalin rentang elemen dari array objek (T[]).
+
+16. copyOfRange(U[] original, int from, int to, Class<? extends T[]> newType)	Menyalin rentang elemen dengan menentukan tipe array baru.
+
+17. Integer[].class
+Di dalam Java, Integer[].class digunakan untuk merepresentasikan tipe array Integer[] sebagai objek Class. Ini diperlukan dalam metode 
+seperti Arrays.copyOf(), yang memungkinkan kita menentukan tipe array hasil salinan.
+
+    Kenapa Ada .class?
+    > Mendapatkan Representasi Class
+        Dalam Java, setiap tipe data memiliki representasi Class yang bisa diakses dengan .class.
+
+        Integer.class  // Representasi Class untuk Integer
+        String.class   // Representasi Class untuk String
+
+
+    > Array juga Memiliki Representasi Class
+        Jika kita ingin mendapatkan representasi Class dari sebuah array, kita harus menggunakan .class dengan format:
+
+        Integer[].class  // Representasi Class untuk array Integer[]
+        String[].class   // Representasi Class untuk array String[]
+
+18. deepEquals(Object[] a1, Object[] a2)
+✅ Fungsi:
+    > Memeriksa apakah dua array bersarang (nested array) memiliki konten yang sama pada setiap elemen, bahkan jika array tersebut berisi array di dalamnya.
+    > Berbeda dari equals(), metode ini bisa membandingkan array bersarang dengan benar.
+✅ Keyword yang digunakan:
+    > deepEquals → Memeriksa kesamaan dua array secara mendalam.
+    > Object[] → Tipe array yang bisa berisi objek lain, termasuk array bersarang.
+
+19. deepHashCode(Object[] a)
+✅ Fungsi:
+    > Menghasilkan kode hash berdasarkan konten mendalam dari array bersarang.
+    > Berguna jika ingin menggunakan array dalam struktur data seperti HashSet atau HashMap.
+✅ Keyword yang digunakan:
+    > hCode → Menghasilkan nilai hash berdasarkan isi array (termasuk array bersarang).
+
+20. deepToString(Object[] a)
+✅ Fungsi:
+    > Mengubah array bersarang menjadi representasi string yang lebih mudah dibaca.
+    > Berbeda dengan toString(), metode ini bisa menangani array bersarang dengan benar.
+✅ Keyword yang digunakan:
+    > deepToString → Mengubah array bersarang ke string.
+
+21. equals(boolean[] a, boolean[] a2)
+✅ Fungsi:
+    > Memeriksa apakah dua array boolean memiliki isi yang sama.
+    > Berbeda dari ==, metode ini membandingkan isi array, bukan hanya referensinya.
+✅ Keyword yang digunakan:
+    > equals → Memeriksa kesamaan isi array.
+    > boolean[] → Tipe data array yang berisi nilai boolean (true atau false).
+
+22. fill(boolean[] a, int fromIndex, int toIndex, boolean val)
+✅ Fungsi:
+    > Mengisi sebagian array boolean dengan nilai yang diberikan.
+    > fromIndex inklusif, toIndex eksklusif.
+✅ Keyword yang digunakan:
+    > fill → Mengisi array dengan nilai tertentu.
+    > boolean[] → Tipe array yang diisi.
+    > fromIndex, toIndex → Rentang indeks yang akan diisi.
+    > boolean val → Nilai yang akan diisi.
+
+23. parallelPrefix(double[] array, DoubleBinaryOperator op)
+📝 Penjelasan:
+    > Melakukan operasi agregasi (misalnya penjumlahan kumulatif) secara paralel pada array.
+    > Menggunakan fungsi lambda (DoubleBinaryOperator) untuk menentukan operasi yang dilakukan.
+    > Cocok untuk memproses data dalam jumlah besar lebih cepat.
+
+24. parallelPrefix(T[] array, BinaryOperator<T> op)
+📝 Penjelasan:
+    > Sama seperti metode parallelPrefix sebelumnya, tetapi bisa digunakan pada array objek.
+    > Menggunakan fungsi lambda (BinaryOperator<T>) untuk operasi pada array.
+
+
+25. parallelSetAll(double[] array, IntToDoubleFunction generator)
+📝 Penjelasan:
+    > Mengisi array dengan nilai yang dihasilkan oleh fungsi generator (IntToDoubleFunction).
+    > Pemrosesan dilakukan secara paralel, lebih cepat dibandingkan pengisian manual.
+
+26. parallelSetAll(int[] array, IntUnaryOperator generator)
+📝 Penjelasan:
+    > Sama seperti metode sebelumnya, tetapi bekerja pada array bertipe int[].
+    > IntUnaryOperator adalah fungsi yang menerima satu int dan mengembalikan int.
+
+27. parallelSetAll(T[] array, IntFunction<? extends T> generator)
+📝 Penjelasan:
+    > Mengisi array dengan nilai yang dihasilkan oleh IntFunction.
+    > Bisa digunakan untuk array objek (String[], Integer[], dll.).
+    > IntFunction<T> adalah fungsi yang menerima int dan mengembalikan T.
+
+28. parallelSort(byte[] a, int fromIndex, int toIndex)
+📝 Penjelasan:
+    > Mengurutkan sebagian array dari fromIndex hingga toIndex secara paralel.
+    > Lebih cepat dibandingkan Arrays.sort() karena menggunakan multi-threading.
+
+29. parallelSort(T[] a, int fromIndex, int toIndex, Comparator<? super T> cmp)
+📝 Penjelasan:
+    > Mengurutkan sebagian elemen array (fromIndex hingga toIndex) berdasarkan Comparator secara paralel.
+    > Hanya sebagian dari array yang akan diurutkan, bagian lainnya tetap sama.
+
+30. setAll(double[] array, IntToDoubleFunction generator)
+📝 Penjelasan:
+    > Mengisi setiap elemen double[] menggunakan fungsi generator.
+    > IntToDoubleFunction → Fungsi yang menerima indeks (int) dan mengembalikan nilai double.
+
+31. setAll(int[] array, IntUnaryOperator generator)
+📝 Penjelasan:
+    > Mengisi array int[] dengan nilai dari fungsi generator (IntUnaryOperator).
+    > IntUnaryOperator → Fungsi yang menerima indeks (int) dan mengembalikan nilai int.
+
+32. setAll(T[] array, IntFunction<? extends T> generator)
+📝 Penjelasan:
+    > Mengisi array objek (T[]) dengan nilai dari fungsi generator (IntFunction).
+    > IntFunction<? extends T> → Menghasilkan nilai T berdasarkan indeksnya.
+
+33. sort(T[] a, int fromIndex, int toIndex, Comparator<? super T> c)
+📝 Penjelasan:
+    > Mengurutkan sebagian elemen array (fromIndex hingga toIndex) menggunakan Comparator.
+    > Sama seperti parallelSort(), tetapi dijalankan dalam satu thread (bukan multi-threading).
+
+    🔹 Apa yang Dimaksud dengan "Satu Thread" dalam sort(T[] a, int fromIndex, int toIndex, Comparator<? super T> c)?
+    Dalam Java, thread adalah unit eksekusi independen yang berjalan dalam suatu program. Saat kode dijalankan, 
+    Java bisa menggunakan satu thread (single-threaded) atau banyak thread (multi-threaded) untuk mengeksekusi tugas-tugasnya.
+
+    📝 "Satu Thread" Berarti Apa?
+    Ketika kita mengatakan bahwa Arrays.sort() berjalan dalam satu thread, itu berarti:
+    
+    > Hanya satu aliran eksekusi (single-thread) yang mengerjakan sorting.
+    > Semua elemen diurutkan secara berurutan (sekuensial), tanpa membagi pekerjaan ke beberapa core prosesor.
+    > Lebih lambat untuk array besar dibandingkan sorting paralel seperti parallelSort(), karena tidak memanfaatkan banyak CPU core.
+    
+    sort(T[] a, int fromIndex, int toIndex, Comparator<? super T> c)	==>  Satu thread (single-threaded)  ==>	Array kecil hingga menengah
+    parallelSort(T[] a, int fromIndex, int toIndex, Comparator<? super T> c)	==> Banyak thread (multi-threaded)	==> Array besar (memanfaatkan banyak core CPU)
+
+    🔹 Kesimpulan
+    > sort() berjalan dalam satu thread, sehingga lebih lambat untuk array besar.
+    > parallelSort() menggunakan beberapa thread, lebih cepat untuk array besar, tetapi ada sedikit overhead.
+    > Gunakan sort() untuk array kecil-menengah dan parallelSort() untuk array besar yang perlu efisiensi tinggi.
+
+    🔹 Penjelasan Metode spliterator() dalam java.util.Arrays
+    Metode spliterator() dalam Java digunakan untuk membuat Spliterator, yaitu objek yang bisa membagi elemen-elemen 
+    dalam array untuk pemrosesan paralel atau iterasi sekuensial.
+    
+    🔹 Spliterator = "Splitting Iterator", yaitu iterator yang bisa membagi tugas menjadi bagian-bagian kecil agar 
+    lebih efisien, terutama dalam Stream API.

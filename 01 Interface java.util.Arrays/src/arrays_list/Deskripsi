@@ -1,0 +1,82 @@
+https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#ArrayList--
+1. Membuat Daftar Kosong dengan Kapasitas Awal Sepuluh
+Untuk membuat ArrayList kosong dengan kapasitas awal sepuluh, 
+Anda dapat menggunakan konstruktor ArrayList(int initialCapacity).
+
+2. Membuat Daftar yang Memuat Elemen-Elemen Koleksi yang Ditentukan
+Untuk membuat ArrayList yang memuat elemen-elemen dari koleksi yang ditentukan, 
+Anda dapat menggunakan konstruktor ArrayList(Collection<? extends E> c). 
+Berikut adalah contoh menggunakan ArrayList dengan koleksi ArrayList lain.
+
+3. Metode clone() dalam kelas ArrayList digunakan untuk membuat salinan dangkal dari daftar. 
+Salinan dangkal berarti bahwa elemen-elemen dalam daftar yang disalin adalah referensi 
+ke objek yang sama dengan yang ada di daftar asli, bukan salinan dari objek tersebut.
+
+4. Menggunakan contains(Object o)
+Metode contains(Object o) digunakan untuk memeriksa apakah elemen tertentu ada dalam daftar. 
+Metode ini mengembalikan true jika elemen tersebut ditemukan, dan false jika tidak.
+
+5. Menggunakan ensureCapacity(int minCapacity)
+Metode ensureCapacity(int minCapacity) digunakan untuk memastikan bahwa ArrayList memiliki 
+kapasitas yang cukup untuk menampung setidaknya minCapacity elemen. Jika kapasitas saat ini 
+kurang dari minCapacity, maka kapasitas ArrayList akan ditingkatkan.
+
+6. Menggunakan forEach(Consumer<? super E> action)
+Metode forEach digunakan untuk menerapkan aksi tertentu 
+pada setiap elemen dalam daftar. Anda dapat menggunakan lambda expression 
+atau referensi metode untuk mendefinisikan aksi yang ingin diterapkan.
+
+7. Menggunakan indexOf(Object o)
+Metode indexOf digunakan untuk menemukan indeks kemunculan pertama dari elemen tertentu
+dalam daftar. Jika elemen tidak ditemukan, metode ini mengembalikan -1.
+
+8. Menggunakan isEmpty()
+Metode isEmpty digunakan untuk memeriksa apakah daftar kosong. Metode ini mengembalikan true 
+jika daftar tidak berisi elemen apa pun, dan false jika ada elemen.
+
+9. Menggunakan isEmpty()
+Metode isEmpty digunakan untuk memeriksa apakah daftar kosong. Metode ini mengembalikan true 
+jika daftar tidak berisi elemen apa pun, dan false jika ada elemen.
+>> Keunggulan
+    > Kemampuan untuk Menghapus Elemen Selama Iterasi
+    > contoh 
+        // Menggunakan iterator untuk menghapus "Banana"
+        Iterator<String> iterator = fruits.iterator();
+        while (iterator.hasNext()) {
+            String fruit = iterator.next();
+            if (fruit.equals("Banana")) {
+                iterator.remove(); // Menghapus elemen saat iterasi
+            }
+        }
+    > Kontrol yang Lebih Besar atas Proses Iterasi
+    > contoh
+         // Menggunakan iterator untuk menghentikan iterasi saat menemukan "Banana"
+         Iterator<String> iterator = fruits.iterator();
+         while (iterator.hasNext()) {
+             String fruit = iterator.next();
+             if (fruit.equals("Banana")) {
+                 System.out.println("Ditemukan: " + fruit);
+                 break; // Menghentikan iterasi
+             }
+         }
+    > Dapat Digunakan untuk Koleksi yang Berbeda
+    > contoh 
+        Iterator<String> iterator = fruits.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    > Iterator adalah antarmuka yang dapat digunakan untuk berbagai jenis koleksi (seperti Set, List, dan Map).
+    > Mendukung Iterasi yang Lebih Kompleks
+    > contoh
+        for (int i = fruits.size() - 1; i >= 0; i--) {
+            System.out.println(fruits.get(i));
+        }
+10. replaceAll(UnaryOperator<E> operator)
+Metode ini digunakan untuk mengganti setiap elemen dalam daftar dengan hasil penerapan operator yang diberikan.
+> Parameter: operator adalah objek UnaryOperator yang mendefinisikan bagaimana elemen akan diganti.
+> Proses: Metode ini akan menerapkan operator pada setiap elemen dalam daftar.
+
+11. retainAll(Collection<?> c)
+Metode ini digunakan untuk menyimpan hanya elemen-elemen dalam daftar yang juga terdapat dalam koleksi yang ditentukan.
+> Parameter: c adalah koleksi yang berisi elemen-elemen yang ingin dipertahankan.
+> Proses: Metode ini akan menghapus semua elemen dari daftar yang tidak ada dalam koleksi c.
