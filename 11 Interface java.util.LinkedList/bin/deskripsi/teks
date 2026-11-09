@@ -1,0 +1,78 @@
+1. Pengertian
+
+    LinkedList adalah implementasi dari interface List dan Deque
+    yang menggunakan struktur doubly linked list (linked list ganda).
+    setiap elemen dalam LinkedList disimpan dalam node yang berisi 
+    referensi ke sebelumnya dan selanjutnya.
+
+    LinkedList berada pada package java.util, sehingga harus diimpor 
+    sebelum digunakan: 
+
+        import java.util.LinkedList;
+
+2. Fungsi dan Kegunaan
+
+    >   Digunakan untuk menyimpan data secara dinamis tanpa perlu menentukan
+        ukuran awal.
+    >   Cocok untuk aplikasi yang memerlukan banyak operasi penyisipan dan 
+        penghapusan element, karena LinkedList lebih efisien dalam hal ini 
+        dibandingkan ArrayList.
+    >   Dapat digunakan sebagai queue (antrian) dan stack (tumpukan) 
+        karena mengimplementasikan deque.
+
+3. Tujuan Penggunaan
+
+    >   Memudahkan pengelolaan data yang sering berubah (misalnya, elemen sering
+        ditambahkan atau dihapus ditengah daftar).
+    >   Memberikan fleksibilitaa dalam akses data secara urut atau dari kedua arah
+        depan atau belakang.
+    >   Mengoptimalkan penggunaan memori jika sering terjadi perubahan ukuran list.
+
+4. Kelebihan LinkedList
+
+    >   Efisien dalam penyisipan dan penghapusan: operasi add() dan remove() lebih
+        cepat dibandingkan ArrayList jika dilakukan awal atau tengah daftar.
+    >   implementasi Deque (Queue dan Stack): Dapat digunakan sebagai struktur 
+        antrian dan tumpukan.
+    >   Ukuran dinamis: tidak perlu menentukan kapasitas awal seperti ArrayList.
+
+5. Kelemahan LinkedList
+
+    >   Akses lambat (O(n)): Tidak seperti ArrayList, LinkedList tidak memiliki akses
+        random yang cepat. Harus menelusuri daftar untuk menemukan elemen tertentu.
+    >   Memerlukan memori lebih: setiap element dalam LinkedList memiliki referensi 
+        keelemen sebelumnya dan berikutnya, sehingga menggunakan lebih banyak 
+        memori dibandingkan ArrayList. 
+
+6. Perbedaan LinkedList, ArrayList dan Vektor
+
+Fitur                       LinkedList                          ArrayList                           Vector
+Struktur data               Doubly LinkedList                   Dynamic Array                       Dinamic Array
+Waktu akses                 O(n) karena traversal               O(1) jika indeks diketahui          O(1) jika indeks diketahui
+Penyisipan & penghapusan    cepat (O(1)) diawal/ditengah        Lambat (O(n)) ditengah              Lambat (O(n)) ditengah
+Sinkronisasi                Tidak Synchronized                  Tidak synchronized                  synchronized (thread-safe)
+Penggunaan memori           Lebih besar (karena referensi node) Lebih efisien                       Lebih besar (karena sinkronisasi)
+
+# Pengertian Queue dalam struktur data
+
+    Queue (antrian) adalah struktur data linear yang mengikuti prinsip FIFO (First in, First out).
+    artinya, elemen yang pertama kali dimasukkan kedalam antrian akan menjadi element pertama yang dikeluarkan.
+
+# Contoh dalam kehidupan nyata
+
+    Queue dapat diibaratkan seperti antrian dikasir supermarket:
+    1. Orang pertama yang masuk ke antrian akan dilayani lebih dulu.
+    2. Orang kedua harus menunggu sampai orang pertama selesai.
+    3. Jika ada orang baru mereka masuk kebelakan antrian.
+
+# Fungsi dan kegunaan Queue
+
+    Queue sering digunakan dalam sebagai aplikasi, seperti: manajemen proses
+    disistem operasi -> Scheduler CPU menggunakan queue untuk mengeksekusi proses secara berurutan.
+
+    1.  Antrian dalam jaringan komputer -> data dalam komunikasi dikirim
+        menggunakan konsep queue (misalnya buffer dalam streaming).
+    2.  Breadth-First Search (BFS) dalam Graf → Algoritma pencarian level menggunakan queue.
+    3.  Manajemen Job di Printer → Printer menggunakan queue untuk mencetak dokumen satu per satu.
+
+

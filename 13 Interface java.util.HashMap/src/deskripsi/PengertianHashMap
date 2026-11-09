@@ -1,0 +1,208 @@
+1. Pengertian HashMap
+    HashMap adalah implementasi dari interface Map dalam java yang digunakan
+    untuk menyimpan pasangan key dan value. HashMap menggunakan struktur Hash
+    table, yang memungkinkan menyimpanan dan penganmbilan data dengan akses 
+    cepat yaitu o(1) dalam banyak kasus.
+
+    1.1. Struktur Hash Table adalah sebuah struktur data yang menyimpan pasangan
+    key-value dang menggunakan fungsi Hash untuk memetakan key ke indek dalam sebuah array. 
+    Ini memungkinkan penyimpanan dan pencarian data yang sangat capat, sering kali dengan 
+    waktu akses O(1) dalam banyak kasus.
+    1.2. Cara kerja Hash Table
+    1.2.1. Fungsi Hash
+            > Fungsi hash mengubah key manjadi sebuah indeks dalam array.
+            > contoh fungsi hash sederhana:
+
+                    Index = hahs(key) mod size
+
+            > Misal, jika key = "John" dan hash("John") = 12345, maka indeksnya 
+            bisa dihitung sebagai:
+
+                    index = 12345 % 100 = 45
+
+            > Nilai yang sesuai kemudian disimpan dilokasi array ke 45
+            > Bagaimana Fungsi Hash Mengubah Key menjadi Indeks dalam Array?
+                Fungsi hash adalah algoritma yang menerima sebuah key sebagai input dan mengubah
+                menjadi angka (hash code), kemudian menggunakan angka tersebut untuk menentukan 
+                indeks dalam array tempat menyimpan data.
+                Tahapan konversi
+                1) Menghasilkan Hash Code dari Key
+                Ketika memasukan sebuah key kedalam HashMap, java akan menggunakan metode hashCode()
+                untuk menghasilkan hash code key tersebut.  Hash code adalah angka integer yang 
+                bisa positif atau negatif.
+                Contoh:
+
+                String key = "Alice";
+                int hashCode = key.hashCode(); 
+                System.out.println("Hash Code Alice: " + hashCode);
+
+                2) Mengubah Hash Code menjadi indeks dalam array
+                Hash Code tidak bisa langsung digunakan sebagai indeks karena bisa bernilai besar/
+                negatif. Maka, kita perlu mengubahnnya menjadi nilai indeks yang sesuai dengan ukuran
+                array menggunakan modulus(%).
+
+                    index = hash Code mod size
+
+                Contoh: 
+
+                int index = hashCode % 16; // Misalnya, ukuran awal array HashMap adalah 16
+                System.out.println("Indeks dalam array: " + index);
+    1.2.2. Penyimpanan data
+            > Setelah indeks ditemukan, value akan disimpan dalam array di indeks tersebut.
+
+                    HashMap<String, Integer> map = new HashMap<>();
+                    map.put("Alice", 25);
+
+                    Jika hash("Alice") % 10 = 3, maka data ("Alice", 25) disimpan di indeks 3
+    1.2.3. Pencarian indeks
+            > Ketika ingin mendapat data dengan key tertentu, fungsi hash akan digunakan untuk
+            menemukan indeks yang sama, sehingga waktu pencarian sangat cepat.
+    1.2.4. Mengapa akses data dihash table cepat      
+            > Operasi put() = penyimpan dan get() = pengambilan menggunakan fungsi hash yang 
+            langsung mengarahkan kelokasi penyimpanan dalam array.
+            > Tidak perlu melakukan pencarian sekuensial seperti dalam ArrayList atau LinkedList, 
+            yang memerlukan waktu O(n)
+            > Jika fungsi hash menyebarkan data dengan baik (minim collision), maka setiap operasi 
+            hanya memerlukan satu langkah akses yaitu O(1),
+    1.2.5. Masalah yang mungkin terjadi: collision
+            > Collision terjadi ketika dua key yang berbeda memiliki indeks hash yang sama
+            > Contoh:
+
+            hash("John") % 10 = 5
+            hash("Jane") % 10 = 5
+            kedua data harus masuk ke indeks 5.
+
+            > Cara mengatasi Collision:
+            1) Chaining (Linked List disetiap slot)
+                > Setiap indek dalam array berisi daftar (LinkedList) untuk menyimpan beberapa elemen.
+                > Jika terjadi collision, elemen baru akan ditambahkan kedalam daftar.
+                > Contoh: 
+
+                index 5 → [("John", 30) → ("Jane", 28)]
+
+                > Bagaimana Mengambil Value dari Key yang Berada di Indeks yang Sama?
+                    Ketika kita menggunakan get(), HashMap akan:
+
+                        > Menghitung indeks yang sesuai dengan hashCode() % size.
+                        > Mencari di indeks tersebut
+                            Jika hanya ada satu elemen, langsung dikembalikan.
+                            Jika ada lebih dari satu elemen (collision terjadi), maka:
+                                > HashMap akan mencari dalam LinkedList di indeks tersebut dengan membandingkan key satu per satu.
+                > Bagaimana Java Menemukan David?
+                    > Java menghitung hashCode untuk "Jane", menemukan indeks 5.
+                    > Di indeks 5, ada lebih dari satu elemen dalam LinkedList (("John", 30) dan ("Jane", 28)).
+                    > Java akan mencari secara linear di dalam LinkedList sampai menemukan "Jane".
+                    > Java mengembalikan nilai 28.
+            2) Open addressing (Linear Probing, Quadratic Probing, Double Hashing)
+                > Jika terjadi collision pencarian indeks lain dilakukan derdasarkan aturan tertentu.
+                > Contoh:
+                Linear Probing mencari indeks berikutnya yang kosong.
+
+                Kesimpulan
+                > Hash Table adalah struktur data yang menggunakan fungsi hash untuk 
+                menyimpan dan mengambil data dengan cepat.
+                > Operasi utama (put(), get(), remove()) memiliki kompleksitas waktu rata-rata O(1).
+                > Masalah utama adalah collision, yang dapat diatasi dengan chaining atau open addressing.
+                > HashMap di Java adalah implementasi dari Hash Table, dengan tambahan mekanisme untuk 
+                menangani collision dan mengatur ukuran tabel secara otomatis.
+
+2. Kegunaan HashMap
+    > Menyimpan data dalam bentuk pasangan key dan value.
+    > Mempermudah pencarian data berdasarkan key.
+    > Digunakan dalam implementasi cache untuk meningkatkan performa aplikasi.
+    > Menyediakan cara yang efisien untuk mengelola data berbasis asosiasi.
+    > Digunakan dalam berbagai algoritma dan struktur data seperti graph traversal,
+    frequency count, dan database indexing.
+
+3. Tujuan HashMap
+    Untuk menyediakan koleksi yang memungkinkan pencarian cepat berbasis key dengan 
+    kompleksitas waktu hampir konstan O(1).
+
+4. Perbedaan HashMap 
+Interface/kompleksitas                          Fitur Utama                                         Perbedaan dengan HashMap
+HashMap                                         Struktur key-value berbasis hash table              Tidak menjamin urutan elemen
+TreeMap                                         Struktur key-value berbasis pohon                   Menyimpan element dalam urutan alami key
+LinkedHashMap                                   Kombinasi HashMap dan LinkedList                    Mempertahankan urutan penyisipan element
+HashTable                                       Struktur key-value yang thread safe                 HashMap lebih cepat karena tidak sinkronisasi
+
+5. Keunggulan HashMap
+    > Kecepatan tinggi dalam operasi pencarian, penyisipan, dan penghapusan (O(1)).
+    > Mendukung null value baik untuk key maupun value.
+    > Tidal memerlukan urutan khusus sehingga lebih efisien dalam penyimpanan.
+    > Dapat menyimpan banyak data berguna dalam operasi cache.
+
+6. Kekurangan HashMap
+    > Tidak thread safe sehingga perlu sinkronisasi manual jika digunakan dalam lingkungan multi thread
+    > Tidak mempertahankan urutan.
+    > Memerlukan kapasitas yang lebih besar dibandingkan struktur data lain kerana mengandalkan Hashing.
+
+    # Kesimpulan 
+    1. HashMap adalah implementasi dari Map yang menggunakan hashing untuk penyimpanan  data berbasis key-value
+    2. Memiliki waktu akses yang cepat (0(1)) untuk sebagian besar operasi
+    3. Tidak mempertahankan urutan elemen dan tidak thread-safe secara default
+    4. Banyak digunakan dalam struktur data yang membutuhkan pencarian cepat
+
+7. Hash Table 
+    Struktur Hash Table adalah sebuah struktur data yang menyimpan pasangan key-value dan menggunakan dungsi hash
+    untuk memetakan key ke indeks dalam sebuah array. ini memungkinkan penyimpan dan pencarian data yang sangat cepat 
+    sering kali dengan waktu akses (0(1)) dalam banyak kasus.
+
+    # Konsep Kerja Hash Table
+        1. Fungsi Hash
+            - Fungsi Hash mengubah key menjadi sebuah indeks dalam array
+            - contoh fungsi hash sederhana:
+                    indeks = hash(key)  mod size
+            
+            - Misalnya, jika key = "John" dan hash("John") = 12345, maka indeksnya bisa dihitung:
+
+                    indeks = 12345 % 100 = 45
+
+            - Nilai yang sesuai kemudian disimpan dilokasi array ke 45.
+        2. Penyimpanan data
+            - Setelah indeks ditemukan, value akan disimpan dalam array di indeks tersebut.
+            - Contoh:
+
+                HashMap<String, Integer> map = new HashMap<>();
+                map.put("Alice", 25);
+
+                jika, hash("Alice") % 10 = 3, maka data ("Alice", 25) disimpan di indeks 3.
+        3. Pencarian data
+            - Ketika ingin mendapat data dengan key tertententu, fungsi hash akan digunakan untuk
+            menemukan indeks yang sama, sehingga waktu pencarian sangat cepat.
+
+    # Mengapa Akses Data diHash Table cepat
+        1. Operasi put() (penyimpanan) dan get() (pengembalian) menggunakan fungsi hash yang langsung
+        mengarahkan ke lokasi penyimpanan dalam array.
+        2. Tidak perlu melakukan pencarian sekuensial seperti dalam ArrayList atau LinkedList yang memerlukan
+        waktu 0(n).
+        2. Jika fungsi hash menyebarkan data dengan baik (minim collision), maka setiap operasi hanya memerlukan satu langkah akses, yaitu 0(1).
+
+    # Masalah yang mungkin terjadi: Collision
+        Terjadi ketika dua key yang berada memiliki dua indeks hash yang sama. Contoh:
+
+            hash("John") % 10 = 5
+            hash("Jane") % 10 = 5
+
+            Kedua data masuk ke indek 5.
+
+        Cara Mengatasi Collision
+        1. Chaining (Linked List ditiap slot)
+            - Setiap indeks dalam array berisi daftar (LinkedList) untuk menyimpan elemen.
+            - Jika terjadi collision elemen baru akan ditambah kedalam daftar.
+            - Contoh:
+
+                index 5 > [("John", 30), ("Jane", 28)]
+        2. Open Addressing(Linear Probing, Quadratic Probing, Double Hashing)
+            - Jika terjadi Collision, pencarian indeks lain dilakukan berdasarkan aturan tertentu.
+            - Contoh: Linear Probing mencari indeks berikutnya yang kosong.
+
+        >> Kesimpulan
+        1. Hash Table adalah strutur data yang menggunakan fungsi hash untuk menyimpan dan mengambil data 
+        dengan capat.
+        2. Operasi utama (put, get, remove) memiliki kompleksitas waktu rata-rata 0(1).
+        3. Masalah utama adalah collision, yang dapat diatasi dengan chaining atau open addressing.
+        4. HashMap di Java adalah implementasi dari Hash Table, dengan tambahan mekanisme untuk menangani
+        collision dan mengatur ukuran tabel secara otomatis.
+        
+
+
