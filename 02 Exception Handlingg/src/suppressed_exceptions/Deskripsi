@@ -1,0 +1,12 @@
+1. Suppressed exceptions fitur dalam Java yang diperkenalkan pada Java 7. Fitur ini memungkinkan Anda untuk menangkap 
+beberapa pengecualian yang terjadi selama eksekusi blok try dan menyimpannya dalam objek pengecualian utama. 
+Ini sangat berguna ketika Anda memiliki beberapa sumber daya yang perlu ditutup, dan saat penutupan salah satu sumber 
+daya tersebut menghasilkan pengecualian. Dengan menggunakan suppressed exceptions, Anda dapat menangkap pengecualian 
+utama dan juga mendapatkan informasi tentang pengecualian yang terjadi saat menutup sumber daya lainnya.
+
+> Informasi Lengkap : Anda dapat menangkap dan melaporkan beberapa hal yang terjadi selama eksekusi, 
+memberikan informasi yang lebih lengkap tentang kesalahan yang terjadi.
+> Pengelolaan Sumber Daya yang Lebih Baik : Dengan menggunakan try-with-resources, 
+Anda dapat memastikan bahwa semua sumber daya ditutup dengan benar, bahkan jika terjadi pengirim.
+> Debugging yang Lebih Mudah : Pengecualian yang ditekan membantu dalam proses debugging dengan 
+memberikan konteks tambahan tentang kesalahan yang terjadi.

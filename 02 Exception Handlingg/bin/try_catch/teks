@@ -1,0 +1,92 @@
+https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html
+1. try-catch adalah mekanisme penanganan pengecualian (exception handling) dalam Java. 
+   Pengecualian adalah kondisi yang terjadi selama eksekusi program yang mengganggu alur normal program. 
+   Dengan menggunakan try-catch, Anda dapat menangkap dan menangani pengecualian tersebut tanpa 
+   menghentikan program secara keseluruhan.
+  
+   > try: Blok kode yang berisi pernyataan yang mungkin menyebabkan pengecualian.
+   > catch: Blok kode yang menangkap pengecualian yang terjadi di dalam blok try. Anda dapat menangkap 
+   pengecualian spesifik dengan menyebutkan jenis pengecualian 
+   (misalnya, IOException, ArithmeticException, dll.).
+
+2. Tiga jenis pengecualian
+    > Jenis pengecualian pertama adalah pengecualian yang diperiksa . Ini adalah kondisi pengecualian 
+    yang harus diantisipasi dan dipulihkan oleh aplikasi yang ditulis dengan baik. Misalnya, 
+    anggaplah sebuah aplikasi meminta nama file input kepada pengguna, lalu membuka file tersebut 
+    dengan meneruskan nama tersebut ke konstruktor untuk java.io.FileReader. Namun terkadang pengguna 
+    memberikan nama file yang tidak ada, dan konstruktor melempar java.io.FileNotFoundException.
+
+    > Jenis pengecualian kedua adalah kesalahan . Ini adalah kondisi pengecualian yang bersifat 
+    eksternal terhadap aplikasi, dan aplikasi biasanya tidak dapat mengantisipasi atau memulihkannya. 
+    Misalnya, anggaplah bahwa suatu aplikasi berhasil membuka berkas untuk input, tetapi tidak dapat 
+    membaca berkas tersebut karena kerusakan perangkat keras atau sistem. Pembacaan yang tidak berhasil 
+    akan memunculkan kesalahan java.io.IOError.
+
+    > Jenis pengecualian ketiga adalah pengecualian waktu proses . Ini adalah kondisi pengecualian yang 
+    bersifat internal pada aplikasi, dan aplikasi biasanya tidak dapat mengantisipasi atau memulihkannya. 
+    Ini biasanya menunjukkan bug pemrograman, seperti kesalahan logika atau penggunaan API yang tidak tepat.
+    Misalnya, pertimbangkan aplikasi yang dijelaskan sebelumnya yang meneruskan nama file ke konstruktor 
+    untuk FileReader. Jika kesalahan logika menyebabkan a nullditeruskan ke konstruktor, konstruktor akan 
+    melempar NullPointerException. 
+
+1. Multiple Catch Blocks: Anda dapat memiliki beberapa blok catch untuk menangani berbagai jenis pengecualian.
+   try {
+    // Kode yang mungkin menyebabkan pengecualian
+   } catch (IOException e) {
+    // Menangani IOException
+   } catch (ArithmeticException e) {
+    // Menangani ArithmeticException
+   }
+
+2. Finally Block: Anda juga dapat menambahkan blok finally yang akan dieksekusi setelah blok try dan catch, 
+   terlepas dari apakah pengecualian terjadi atau tidak.
+   try {
+      // Kode yang mungkin menyebabkan pengecualian
+   } catch (Exception e) {
+      // Menangani pengecualian
+   } finally {
+      // Kode yang selalu dieksekusi
+      System.out.println("Blok finally dieksekusi.");
+   }
+
+   3. Throwing Exceptions: Anda juga dapat melempar pengecualian secara manual menggunakan kata kunci throw.
+   4. Throwable: Superkelas dari semua kesalahan dan pengecualian di Java.
+   5. Jenis-jenis Pengecualian
+
+      > Pengecualian yang Diperiksa: Pengecualian yang mengharuskan Anda tangani oleh kompiler (misalnya, IOException, SQLException).
+      > Pengecualian yang Tidak Dicentang: Pengecualian yang tidak mengharuskan Anda menanganinya oleh kompiler 
+      (misalnya, NullPointerException, ArithmeticException).
+   6. Beberapa exception
+      > ArithmeticException = Kesalahan aritmatika (seperti pembagian oleh 0).
+      > NullPointerException	= Mengakses objek yang bernilai null.
+      > ArrayIndexOutOfBoundsException = Mengakses indeks array yang tidak valid.
+      > FileNotFoundException	File yang dicari tidak ditemukan.
+      > Exception	= Kesalahan input/output.
+      > NumberFormatException	= Kesalahan konversi string ke tipe angka.
+      > ClassFormatError = Error, bukan Exception, yang muncul ketika JVM tidak dapat memuat atau memverifikasi file bytecode .class karena formatnya tidak valid.
+         Penyebab umum:
+         File .class rusak.
+         File .class dihasilkan oleh kompiler yang tidak kompatibel dengan versi JVM.
+      > ConcurrentModificationException
+      terjadi ketika sebuah koleksi (seperti ArrayList atau HashMap) dimodifikasi secara struktural 
+      (misalnya: menambah atau menghapus elemen) saat iterasi sedang berlangsung.
+         > Modifikasi yang diizinkan adalah melalui iterator itu sendiri, bukan langsung pada koleksi.
+      > ClassNotFoundException
+      Checked Exception yang terjadi ketika aplikasi mencoba memuat kelas dengan metode Class.forName(), ClassLoader.loadClass(), 
+      atau ClassLoader.findSystemClass() tetapi kelas tersebut tidak ditemukan di classpath.
+         Penyebab umum:
+         Nama kelas salah.
+         Kelas tidak tersedia di classpath.
+         Kesalahan konfigurasi pada aplikasi (misalnya, JDBC Driver tidak ditemukan).
+
+📌 Apa Itu @SuppressWarnings di Java?
+   @SuppressWarnings adalah annotation (informasi tambahan yang terkait dengan poin tertentu) di Java yang digunakan untuk menonaktifkan peringatan (warnings) 
+   tertentu yang diberikan oleh compiler. Annotation ini sering digunakan untuk menghindari peringatan 
+   yang tidak perlu tanpa harus mengubah kode.
+
+   "unchecked"	   Mengabaikan peringatan karena penggunaan raw types atau casting generics tanpa pengecekan.
+   "deprecation"	Mengabaikan peringatan ketika menggunakan metode atau API yang sudah deprecated.
+   "unused"	      Mengabaikan peringatan tentang variabel, parameter, atau metode yang tidak digunakan.
+   "rawtypes"	   Mengabaikan peringatan karena penggunaan raw types dalam generics.
+   "serial"	      Mengabaikan peringatan tentang kelas yang harus memiliki serialVersionUID.
+   "all"	         Menonaktifkan semua peringatan di dalam blok kode yang ditandai.

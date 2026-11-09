@@ -1,0 +1,32 @@
+1. Try-with-resources adalah fitur dalam Java yang diperkenalkan pada Java 7. 
+Fitur ini memungkinkan Anda untuk secara otomatis menutup sumber daya (resources) seperti file, 
+koneksi database, atau objek lain yang mengimplementasikan antarmuka AutoCloseable setelah selesai digunakan. 
+Dengan menggunakan try-with-resources, Anda tidak perlu menulis kode untuk menutup sumber daya secara manual 
+dalam blok finally, sehingga membuat kode lebih bersih dan mengurangi kemungkinan kebocoran sumber daya.
+    
+    try (ResourceType resource = new ResourceType()) {
+    // Kode yang menggunakan resource
+    } catch (ExceptionType e) {
+        // Menangani pengecualian
+    }
+
+    Try-With-Resources:
+
+    > Dalam blok try, kita membuat objek BufferedReader yang membungkus FileReader. 
+    Dengan menggunakan try-with-resources, objek BufferedReader akan secara otomatis ditutup 
+    setelah blok try selesai dieksekusi, baik itu berhasil atau terjadi pengecualian.
+    > Kita menggunakan readLine() untuk membaca file baris per baris dan mencetak setiap baris ke konsol.
+
+2. Keuntungan Menggunakan Try-With-Resources
+    > Pengelolaan Sumber Daya yang Lebih Baik: Sumber daya akan ditutup secara otomatis, 
+    mengurangi risiko kebocoran memori.
+    > Kode yang Lebih Bersih: Mengurangi kebutuhan untuk menulis blok finally untuk menutup sumber daya.
+    > Meningkatkan Keamanan: Mengurangi kemungkinan kesalahan dalam pengelolaan sumber daya.
+
+Resource adalah objek yang harus ditutup setelah digunakan, seperti:
+
+FileReader
+BufferedReader
+FileWriter
+Database Connection (Connection, Statement, ResultSet)
+Stream (InputStream, OutputStream)
