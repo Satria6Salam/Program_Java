@@ -1,0 +1,45 @@
+java.util.Iterator adalah antarmuka (interface) dalam Java yang digunakan untuk 
+menelusuri elemen-elemen dalam koleksi (collection) seperti List, Set, atau Map. 
+Iterator menyediakan cara yang lebih fleksibel untuk mengakses dan memodifikasi 
+elemen dalam sebuah koleksi dibandingkan dengan perulangan berbasis indeks.
+
+Kegunaan Iterator
+1. Menelusuri Elemen dalam Koleksi
+Iterator memungkinkan kita untuk mengambil elemen satu per satu tanpa harus 
+mengetahui struktur internal koleksi.
+
+2. Menghapus Elemen saat Iterasi
+Iterator menyediakan metode remove() yang memungkinkan kita menghapus elemen 
+dari koleksi saat iterasi, sesuatu yang tidak bisa dilakukan dengan perulangan for-each.
+
+3. igunakan dalam Koleksi yang Tidak Mendukung Indeks
+Misalnya, Set tidak memiliki indeks, sehingga Iterator adalah salah satu 
+cara terbaik untuk mengakses elemen dalam Set.
+
+METODE              KELEBIHAN                           KEKURANGAN
+For-each loop       Mudah digunakan, lebih sederhana    Tidak bisa menghapus elemen saat iterasi
+                    dibandingkan Iterator
+
+Iterator            Dapat menghapus elemen selama       Harus membuat objek Iterator terlebih dahulu
+                    koleksi yang tidak memiliki indeks
+
+ListIterator        Bisa berjalan maju dan mundur,      Hanya bisa digunakan pada List, tidak pada Set atau Map
+                    bisa memodifikasi elemen saat 
+                    iterasi
+
+Metode dalam java.util.Iterator
+Iterator hanya memiliki tiga metode utama:
+
+1. hasNext()
+Deskripsi: Memeriksa apakah masih ada elemen berikutnya dalam koleksi.
+Return Type: boolean (true jika masih ada elemen, false jika sudah sampai akhir).
+
+2. next()
+Deskripsi: Mengembalikan elemen berikutnya dalam iterasi dan memindahkan posisi ke elemen berikutnya.
+Return Type: Elemen dari koleksi.
+Catatan: Jika tidak ada elemen berikutnya, akan terjadi NoSuchElementException.
+
+3. remove()
+Deskripsi: Menghapus elemen terakhir yang dikembalikan oleh next().
+Return Type: void
+Catatan: Jika dipanggil tanpa next(), akan terjadi IllegalStateException.

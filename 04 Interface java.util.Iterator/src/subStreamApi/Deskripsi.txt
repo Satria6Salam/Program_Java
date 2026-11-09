@@ -1,0 +1,26 @@
+Stream API di Java adalah fitur yang digunakan untuk melakukan operasi pada koleksi data secara deklaratif dan efisien. 
+Berikut adalah contoh berbagai metode yang bisa digunakan dalam Stream API.
+
+> filter(Predicate<T>)	Memfilter elemen berdasarkan kondisi	stream.filter(n -> n % 2 == 0)
+> map(Function<T, R>)	    Mengubah elemen menjadi bentuk lain	    stream.map(n -> n * n)
+> sorted()	            Mengurutkan elemen dalam stream	        stream.sorted()
+> limit(n)	            Mengambil n elemen pertama	            stream.limit(3)
+> skip(n)	                Melewati n elemen pertama	            stream.skip(3)
+> distinct()	            Menghapus elemen yang duplikat	        stream.distinct()
+> count()	                Menghitung jumlah elemen dalam stream	long count = stream.count();
+> reduce(identity, BinaryOperator<T>)	Menggabungkan elemen dengan operasi tertentu	stream.reduce(0, Integer::sum)
+> collect(Collectors.toList())	Mengonversi stream ke List	                        stream.collect(Collectors.toList())
+> anyMatch(Predicate<T>)	Mengecek apakah ada elemen yang sesuai kondisi	            stream.anyMatch(n -> n > 10)
+> allMatch(Predicate<T>)	Mengecek apakah semua elemen sesuai kondisi	                stream.allMatch(n -> n > 0)
+> noneMatch(Predicate<T>)	Mengecek apakah tidak ada elemen yang sesuai kondisi	    stream.noneMatch(n -> n < 0)
+> findFirst()	            Mengembalikan elemen pertama dalam stream	                Optional<Integer> first = stream.findFirst();
+> findAny()	            Mengembalikan elemen acak dalam stream	                    Optional<Integer> any = stream.findAny();
+
+Kesimpulan
+Stream API di Java sangat kuat untuk memproses koleksi data dengan lebih efisien.
+Metode filter(), map(), dan sorted() sering digunakan untuk memproses dan mengubah data.
+Metode collect() digunakan untuk mengonversi hasil stream kembali ke List, Set, atau Map.
+Metode match() berguna untuk validasi data.
+Metode reduce() memungkinkan operasi agregasi seperti penjumlahan atau perkalian.
+Metode findFirst() dan findAny() memungkinkan pencarian elemen dalam stream.
+Stream API mempermudah dan mengoptimalkan pengolahan data, terutama saat bekerja dengan big data atau operasi paralel. 

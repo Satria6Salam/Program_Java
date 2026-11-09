@@ -1,0 +1,20 @@
+1. ListIterator<E> (Sub-interface dari Iterator)
+ListIterator<E> adalah versi lebih canggih dari Iterator yang hanya tersedia untuk List (ArrayList, LinkedList, dll).
+Perbedaannya dengan Iterator biasa adalah:
+
+> Bisa maju (next()) dan mundur (previous())
+> Bisa mendapatkan indeks elemen saat ini
+> Bisa memodifikasi elemen saat iterasi
+
+
+METODE          DESKRIPSI
+hasNext()       Mengecek apakah masih ada elemen berikutnya
+next()          Mengambil elemen berikutnya
+hasPrevious()	Mengecek apakah masih ada elemen sebelumnya
+previous()	    Mengambil elemen sebelumnya
+nextIndex()	    Mendapatkan indeks dari elemen berikutnya
+previousIndex()	Mendapatkan indeks dari elemen sebelumnya
+remove()	    Menghapus elemen terakhir yang dikembalikan oleh next() atau previous()
+set(E e)	    Mengubah elemen terakhir yang dikembalikan oleh next() atau previous()
+add(E e)	    Menambahkan elemen ke dalam list pada posisi saat ini
+

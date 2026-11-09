@@ -1,0 +1,9 @@
+2. Spliterator<E> (Introduced in Java 8)
+Spliterator (Split Iterator) adalah iterator yang mendukung pemrosesan paralel dan operasi berbasis stream.
+
+METODE                                          DESKRIPSI
+tryAdvance(Consumer<? super E> action)	        Memproses elemen berikutnya jika tersedia
+forEachRemaining(Consumer<? super E> action)	Memproses semua elemen yang tersisa
+trySplit()	                                    Membagi iterator menjadi dua untuk pemrosesan paralel
+estimateSize()	                                Memperkirakan jumlah elemen yang tersisa
+characteristics()	                            Mengembalikan karakteristik iterator

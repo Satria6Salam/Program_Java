@@ -1,0 +1,82 @@
+Java , bahasa pemrograman yang serbaguna dan banyak digunakan, menawarkan serangkaian 
+struktur data yang tangguh untuk menangani koleksi objek secara efisien. Salah satu 
+struktur data fundamental dalam Java adalah antarmuka List yang menyediakan koleksi 
+elemen yang diurutkan dengan ukuran yang dinamis. Ini adalah bagian dari Java Collections 
+Framework, menyediakan cara yang serbaguna dan teratur untuk menangani koleksi elemen. 
+Di bagian ini, kita akan menjelajahi fitur, implementasi , dan praktik terbaik yang 
+terkait dengan Java Lists .
+
+List dalam Java menyediakan fasilitas untuk mengelola koleksi yang terurut. 
+List berisi metode berbasis indeks untuk memasukkan, memperbarui, menghapus, 
+dan mencari elemen. List juga dapat memiliki elemen duplikat. Kita juga dapat 
+menyimpan elemen null dalam list.
+
+Antarmuka List ditemukan dalam paket java.util dan mewarisi antarmuka Collection. 
+Antarmuka ini merupakan pabrik antarmuka ListIterator. Melalui ListIterator, kita 
+dapat mengulang daftar dalam arah maju dan mundur. Kelas implementasi antarmuka 
+List adalah ArrayList, LinkedList, Stack , dan Vector. ArrayList dan LinkedList 
+banyak digunakan dalam pemrograman Java. Kelas Vector sudah tidak digunakan lagi sejak Java 5.
+
+//Creating a List of type String using ArrayList  
+List<String> list=new ArrayList<String>();  
+  
+//Creating a List of type Integer using ArrayList  
+List<Integer> list=new ArrayList<Integer>();  
+  
+//Creating a List of type Book using ArrayList  
+List<Book> list=new ArrayList<Book>();  
+  
+//Creating a List of type String using LinkedList  
+List<String> list=new LinkedList<String>(); 
+
+1. isEmpty()
+Fungsi: Mengembalikan true jika daftar kosong, jika tidak, maka false.
+2. iterator()
+Fungsi: Mengembalikan iterator untuk menelusuri elemen dalam daftar.
+3. lastIndexOf(Object o)
+Fungsi: Mengembalikan indeks terakhir dari elemen yang ditentukan dalam daftar atau -1 jika tidak ditemukan.
+4. listIterator()
+Fungsi: Mengembalikan iterator daftar untuk menelusuri elemen.
+5. listIterator(int index)
+Fungsi: Memulai iterator dari indeks tertentu
+6. remove(int index)
+Fungsi: Menghapus elemen pada indeks tertentu.
+7. remove(Object o)
+Fungsi: Menghapus elemen pertama yang ditemukan dalam daftar.
+8. removeAll(Collection<?> c)
+Fungsi: Menghapus semua elemen yang terdapat dalam koleksi tertentu.
+9. replaceAll(UnaryOperator<E> operator)
+Fungsi: Mengganti setiap elemen dengan hasil dari operasi yang diberikan.
+10. retainAll(Collection<?> c)
+Fungsi: Hanya mempertahankan elemen yang ada dalam koleksi yang diberikan.
+11. set(int index, E element)
+Fungsi: Mengganti elemen pada indeks tertentu.
+12. size()
+Fungsi: Mengembalikan jumlah elemen dalam daftar.
+13. sort(Comparator<? super E> c)
+Fungsi: Mengurutkan daftar berdasarkan comparator.
+14. spliterator()
+Fungsi: Membuat spliterator untuk melakukan operasi paralel.
+15. subList(int fromIndex, int toIndex)
+Fungsi: Mengembalikan sublist dari daftar.
+16. toArray()
+Fungsi: Mengembalikan array yang berisi semua elemen dalam daftar dalam urutan yang benar.
+17. toArray(T[] a)
+Fungsi: Mengembalikan array dari daftar dengan tipe yang ditentukan.
+
+Perbedaan Iterator dan ListIterator 
+1. arah iterasi 
+    > Iteratoor hanya dapat melakukan iterasi maju
+    > ListIterator dapat melakukan  iterasi maju dan mundur 
+
+2. dukungan untuk modifikasi element
+    > Itertor hanya dapat enghapus element (remove())
+    > ListIterator dapat menambah add() set() remove()
+
+3. ketersediaan dalam koleksi 
+    > Iterator dapat digunakan pada semua koleksi yanng mengimplementasikan Collection (List, Set, Queue, dll)
+    > ListIterator hanya tersedia  untuk koleksi yang mengimplementasikan List (ArrayList, Linkelist)
+
+4. akses indek 
+    > Iterator tidak menyediakan akses langsung ke indek element
+    > LisstIterator memiliki metode seperti nextIndex() dan previousIndex() untuk mengetahui indeks element saat ini.

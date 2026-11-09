@@ -1,0 +1,14 @@
+3. Iterable.forEach() (Introduced in Java 8)
+Sejak Java 8, koleksi yang mengimplementasikan Iterable (seperti List, Set) memiliki metode forEach() untuk iterasi berbasis lambda.
+
+forEach(Consumer<? super T> action)	    Melakukan iterasi pada elemen Iterable menggunakan Lambda	=> list.forEach(item -> System.out.println(item));
+Method Reference (::)	                Cara ringkas untuk menggantikan Lambda jika hanya memanggil satu metode	  => list.forEach(System.out::println);
+Set dengan forEach()	                Bisa diterapkan pada Set juga	=> set.forEach(num -> System.out.println(num));
+Map dengan forEach()	                Bisa diterapkan pada Map, menerima (key, value) sebagai parameter	=> map.forEach((k, v) -> System.out.println(k + ": " + v));
+forEach() dengan kondisi	            Bisa digunakan dengan if untuk filtering data	=> list.forEach(item -> { if (item.startsWith("J")) { System.out.println(item); } });
+
+Kesimpulan
+forEach() pada Iterable mempermudah iterasi pada List, Set, dan Map.
+Bisa menggunakan Lambda Expression untuk menyederhanakan kode.
+Bisa menggunakan Method Reference (::) untuk memanggil metode langsung.
+Bisa digunakan dengan kondisi (if) untuk melakukan filter data.
