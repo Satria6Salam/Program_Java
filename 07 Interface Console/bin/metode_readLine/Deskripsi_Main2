@@ -1,0 +1,8 @@
+📌 Penjelasan Kode:
+1. console.readLine("Masukkan nama Anda: ")
+    > Menampilkan teks "Masukkan nama Anda: " sebelum meminta input.
+
+2. console.readLine("Masukkan umur Anda (%s): ", "hanya angka")
+    > (%s) akan digantikan oleh "hanya angka", sehingga output yang ditampilkan akan menjadi:
+        >> Masukkan umur Anda (hanya angka): 
+    > Lalu program akan menunggu input dari pengguna.

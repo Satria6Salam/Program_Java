@@ -1,0 +1,22 @@
+> Metode entrySet() adalah bagian antar muka java.util.Map dijava. ia bertugas 
+mengembalikan sebuah set yang berisi semua pasangan kunci-nilai (entries) yang ada didalam Map.
+Setiap element dalam Set ini merupakan objek Map.Entry, yang merepresentasikan pasangan kunci dan nilai.
+
+> Metode entry.Set memberikan cara efisien untuk mengkases dan memanipilasi data dalam Map.
+dibangdingkan dengan metode lain seperti keySet() dan values(), entrySet() memungkinkan anda 
+bekerja dengan kedua kunci dan nilai secara bersamaan. ini sangat berguna dalam situasi dimana 
+anda perlu melakukan operasi yang melibatkan keduanya.
+
+> Kelebihan 
+
+    1. Efisiensi: mengakses kunci dan nilai secara bersamaan lebih efisien daripada memanggil get() 
+    secara terpisah setelah mendapatkan kunci dari keySet().
+    2. Kemudahan: kode menjadi lebih ringkas dan mudah dibaca karena anda tidak perlu memisahkan 
+    operasi pengambilan kunci dan nilai.
+    3. Fleksibilitas: memungkinkan melakukan operasi yang kompleks yang melibatkan kunci dan nilai secara bersamaan.
+
+> Penggunaan
+
+    1. Mengakses atau memanipulasi kunci dan nilai secara bersamaan.
+    2. Melakukan iterasi melalui semua pasangan kunci dalam Map.
+    3. mencari atau memfilter data berdasarkan kunci dan nilai.

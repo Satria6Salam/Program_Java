@@ -1,0 +1,22 @@
+Studi Kasus: Pengelolaan Daftar Nama Mahasiswa Unik dalam Sebuah Kelas
+Permasalahan
+Sebuah universitas ingin mengelola daftar mahasiswa dalam sebuah kelas. 
+Setiap mahasiswa harus memiliki nama unik dalam daftar. Namun, ada kemungkinan 
+kesalahan saat memasukkan data, seperti nama yang duplikat. Oleh karena itu, 
+kita harus memastikan bahwa setiap nama hanya muncul satu kali.
+
+Penjelasan Implementasi
+
+    > add("Alice"), add("Bob"), dll. menambahkan nama mahasiswa ke dalam Set.
+    > add("Alice") kedua kalinya tidak akan ditambahkan karena Set tidak mengizinkan elemen duplikat.
+    > contains("Bob") digunakan untuk mengecek apakah mahasiswa tertentu sudah terdaftar.
+    > remove("Charlie") menghapus mahasiswa dari daftar.
+    > size() menghitung jumlah mahasiswa yang terdaftar.
+    > isEmpty() mengecek apakah daftar masih memiliki data.
+    > clear() menghapus semua data dalam Set.
+
+Kesimpulan
+
+    > Menggunakan Set memastikan bahwa tidak ada nama mahasiswa yang duplikat.
+    > Operasi seperti menambah, menghapus, dan mengecek keberadaan mahasiswa menjadi lebih mudah dan efisien.
+    > Cocok digunakan dalam berbagai sistem manajemen data yang memerlukan data unik.

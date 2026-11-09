@@ -1,0 +1,34 @@
+Penjelasan: Console dalam Aplikasi Berbasis Teks atau CLI
+Pernyataan bahwa Console biasanya digunakan dalam aplikasi berbasis teks atau Command-Line Interface (CLI) 
+berarti bahwa interface Console dalam Java lebih cocok untuk program yang berjalan di terminal tanpa tampilan grafis. 
+Berikut adalah penjelasan detailnya:
+
+1. Apa itu Aplikasi CLI?
+CLI (Command-Line Interface) adalah jenis antarmuka yang memungkinkan pengguna untuk berinteraksi dengan program menggunakan teks saja, tanpa elemen grafis seperti tombol atau jendela.
+Pengguna memberikan perintah melalui terminal, Command Prompt (cmd), atau PowerShell, dan program memberikan output dalam bentuk teks.
+
+Contoh aplikasi CLI:
+
+    > git (untuk version control)
+    > ping (untuk mengecek koneksi jaringan)
+    > npm (untuk mengelola package di Node.js)
+    > javac dan java (untuk menjalankan program Java)
+
+2. Kenapa Console Digunakan dalam Aplikasi CLI?
+> 🔹 Tidak Membutuhkan GUI (Graphical User Interface)
+Console memungkinkan program menerima input dan memberikan output hanya dengan teks, tanpa perlu antarmuka grafis.
+
+> 🔹 Ringan dan Cepat
+Aplikasi berbasis teks lebih ringan dibandingkan dengan aplikasi berbasis GUI karena tidak perlu memuat elemen visual.
+
+> 🔹 Dapat Digunakan di Server atau Remote Machine
+Aplikasi berbasis CLI sering digunakan dalam server yang hanya memiliki akses terminal (tanpa tampilan grafis), misalnya untuk mengelola database atau mengatur sistem.
+
+> 🔹 Keamanan Lebih Baik untuk Input Sensitif
+Dengan metode seperti readPassword(), Console dapat membaca input tanpa menampilkan karakter di layar, yang sangat berguna untuk menangani password atau data sensitif lainnya.
+
+3. Kesimpulan
+> Console dalam Java cocok digunakan untuk aplikasi berbasis teks atau CLI.
+> CLI lebih ringan, cepat, dan sering digunakan dalam server, pengelolaan sistem, dan debugging.
+> Console menyediakan metode readLine() untuk input teks biasa dan readPassword() untuk input yang lebih aman.
+> Aplikasi CLI tidak memerlukan GUI, sehingga lebih mudah digunakan di berbagai sistem operasi.

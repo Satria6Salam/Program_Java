@@ -1,0 +1,23 @@
+Studi Kasus: Pengelolaan Produk di Toko Onlin
+Permasalahan
+Sebuah toko online ingin menyimpan daftar produk yang tersedia dalam kategori tertentu. 
+Produk-produk ini harus unik (tidak boleh ada duplikasi). Selain itu, toko ingin:
+
+> Menampilkan semua produk yang tersedia dengan berbagai cara iterasi.
+> Mengonversi Set ke dalam array agar bisa digunakan dalam operasi lain, seperti sorting atau pemrosesan lebih lanjut.
+
+
+Penjelasan Implementasi
+1. Menambahkan produk unik ke dalam Set menggunakan add(), duplikasi tidak akan ditambahkan.
+
+2. Mengiterasi Set menggunakan berbagai cara:
+    > For-each loop: Iterasi sederhana untuk menampilkan elemen.
+    > Iterator: Digunakan untuk menelusuri elemen satu per satu secara eksplisit.
+    > forEach + Lambda: Cara modern untuk iterasi dalam Java 8+.
+
+3. Mengonversi Set ke dalam array menggunakan toArray(new String[0]), sehingga bisa digunakan untuk operasi lain seperti sorting atau pemrosesan lebih lanjut.
+
+Kesimpulan
+    > Menggunakan iterasi membantu menampilkan dan memproses elemen dalam Set dengan berbagai cara.
+    > Konversi Set ke array memungkinkan data diproses lebih lanjut, seperti sorting atau filtering.
+    > Sangat cocok untuk sistem yang membutuhkan data unik dan ingin memanfaatkannya dalam berbagai bentuk.

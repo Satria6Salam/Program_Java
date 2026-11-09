@@ -1,0 +1,25 @@
+Studi Kasus: Analisis Data Pengguna Aplikasi Streaming
+Sebuah aplikasi streaming ingin menganalisis kebiasaan pengguna dengan membandingkan dua kelompok pengguna:
+
+    Pengguna yang menonton film kategori "Action"
+    Pengguna yang menonton film kategori "Drama"
+
+Dari data ini, aplikasi ingin melakukan beberapa analisis menggunakan operasi himpunan:
+
+    > Menentukan pengguna yang menonton kedua kategori (Intersection - retainAll()).
+    > Menentukan semua pengguna unik yang menonton salah satu kategori (Union - addAll()).
+    > Menentukan pengguna yang hanya menonton "Action" tetapi tidak menonton "Drama" (Difference - removeAll()).
+
+Penjelasan Implementasi
+    1. Intersection (retainAll())
+    Mengambil hanya pengguna yang ada di kedua Set (menonton "Action" dan "Drama").
+    2. Union (addAll())
+    Menggabungkan semua pengguna dari kedua kategori, memastikan tidak ada duplikasi.
+    3. Difference (removeAll())
+    Mengambil pengguna yang hanya menonton "Action" dan tidak menonton "Drama".
+
+Kesimpulan
+    > Operasi himpunan dengan Set sangat membantu dalam menganalisis data pengguna.
+    > retainAll() digunakan untuk mencari kesamaan antara dua kelompok data.
+    > addAll() memungkinkan penggabungan data unik dari dua kelompok.
+    > removeAll() membantu mencari perbedaan antara dua kelompok data.

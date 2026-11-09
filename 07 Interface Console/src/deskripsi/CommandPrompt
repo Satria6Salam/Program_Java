@@ -1,0 +1,37 @@
+Command Prompt (cmd) di Windows
+📌 Pengertian:
+Command Prompt (sering disebut cmd) adalah terminal bawaan Windows yang digunakan untuk menjalankan perintah berbasis teks. 
+cmd.exe merupakan aplikasi yang memungkinkan pengguna menjalankan perintah DOS dan Windows Shell.
+
+📌 Cara Membuka Command Prompt:
+    > Tekan Win + R, ketik cmd, lalu tekan Enter.
+    > Tekan Win + X lalu pilih Command Prompt (pada Windows 10 versi lama).
+    > Cari "Command Prompt" di Start Menu.
+
+📌 Fungsi Utama Command Prompt:
+
+    1. Navigasi file dan folder
+        >>  cd C:\Users\NamaUser\Documents
+
+    2. Melihat daftar file dan folder
+        >>  dir
+
+    3. Membuat folder baru
+        >>  mkdir ProjekJava
+
+    4. Menghapus file atau folder
+        >>  del file.txt  (menghapus file)
+        >>  rmdir /s Folder  (menghapus folder dan isinya)
+
+    5. Menjalankan program atau skrip
+        >>  java ConsoleExample
+
+📌 Kelebihan Command Prompt:
+✅ Ringan dan cepat
+✅ Mendukung perintah DOS dan Windows Shell
+✅ Cocok untuk tugas-tugas sistem dasar
+
+📌 Kekurangan Command Prompt:
+❌ Tidak mendukung skrip yang lebih kompleks seperti PowerShell
+❌ Tidak sekuat Linux Terminal dalam hal fleksibilitas
+

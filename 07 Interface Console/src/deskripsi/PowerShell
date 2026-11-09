@@ -1,0 +1,57 @@
+PowerShell di Windows
+📌 Pengertian:
+PowerShell adalah terminal yang lebih canggih dibandingkan Command Prompt, diperkenalkan oleh Microsoft untuk mengelola 
+sistem Windows secara lebih fleksibel. PowerShell menggunakan bahasa skrip berbasis objek yang jauh lebih kuat dibandingkan cmd.
+
+📌 Cara Membuka PowerShell:
+    > Tekan Win + X, lalu pilih PowerShell.
+    > Tekan Win + R, ketik powershell, lalu tekan Enter.
+    > Cari "PowerShell" di Start Menu.
+
+📌 Fungsi Utama PowerShell:
+
+1. Mendukung perintah dasar seperti di Command Prompt
+    📌 Contoh:
+
+        >> cd C:\Users\NamaUser\Documents
+        >> Get-ChildItem
+
+2. Mengelola proses dan layanan sistem
+    📌 Contoh:
+
+        >> Get-Process  # Menampilkan daftar proses yang berjalan
+        >> Get-Service  # Menampilkan daftar layanan (services)
+
+3. Menjalankan skrip otomatisasi
+    📌 Contoh:
+
+        >> Get-Content file.txt | ForEach-Object { $_.ToUpper() }
+
+4. Mengelola jaringan dan server Windows
+    📌 Contoh:
+
+        >> Test-Connection google.com  # Mengecek koneksi internet
+
+📌 Kelebihan PowerShell:
+✅ Lebih kuat dari Command Prompt
+✅ Bisa menjalankan skrip otomatisasi
+✅ Terintegrasi dengan sistem Windows
+
+📌 Kekurangan PowerShell:
+❌ Lebih kompleks untuk pemula
+❌ Tidak sekuat Terminal Linux dalam beberapa hal
+
+📌 Perbandingan Terminal, Command Prompt, dan PowerShell
+
+Aspek	                        Command Prompt (cmd)    	                PowerShell	                    Linux/Mac Terminal
+Sistem Operasi	                Windows	                                    Windows	                        Linux & MacOS
+Kemudahan Penggunaan	        Mudah	                                    Agak Sulit	                    Sedang
+Scripting	                    Batch (.bat)	                            PowerShell (.ps1)	            Bash, Zsh, Python, dll.
+Kemampuan Automasi	            Terbatas	                                Sangat Baik	                    Sangat Baik
+Dukungan Perintah Unix/Linux	Tidak Ada	                                Sebagian	                    Penuh
+Fleksibilitas	                Terbatas	                                Tinggi	                        Sangat Tinggi
+
+Kesimpulan
+> Command Prompt (cmd) cocok untuk tugas dasar Windows, tetapi terbatas.
+> PowerShell lebih kuat untuk automasi dan manajemen sistem Windows.
+> Terminal Linux/MacOS lebih fleksibel dan kuat untuk pengembangan perangkat lunak serta administrasi sistem.

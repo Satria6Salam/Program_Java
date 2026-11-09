@@ -1,0 +1,12 @@
+📌 Penjelasan Kode:
+1. console.readPassword("Masukkan password (%s): ", "tersembunyi")
+    >> %s akan digantikan oleh "tersembunyi", sehingga output di layar akan menjadi:
+        -> Masukkan password (tersembunyi): 
+    >> Password yang diketik pengguna tidak akan ditampilkan.
+
+2. new String(password)
+    >> Password dalam char[] dikonversi menjadi String untuk ditampilkan.
+    >> ⚠️ Jangan lakukan ini dalam aplikasi nyata karena menyimpan password dalam String kurang aman.
+
+3. Arrays.fill(password, ' ');
+    >> Setelah digunakan, password dihapus dari memori untuk keamanan.

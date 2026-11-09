@@ -1,0 +1,40 @@
+Studi Kasus: Manajemen Peserta Workshop
+Sebuah perusahaan teknologi mengadakan workshop dan ingin mengelola data peserta secara efisien. 
+Setiap peserta harus unik (tidak boleh ada duplikasi). Berikut beberapa fitur yang diperlukan:
+
+  > Menambahkan daftar peserta baru dalam jumlah banyak sekaligus (addAll(Collection<? extends E> c)).
+  > Memeriksa apakah semua peserta VIP sudah terdaftar dalam daftar umum (containsAll(Collection<?> c)).
+  > Menghapus semua peserta yang berada dalam daftar blacklist (removeAll(Collection<?> c)).
+  > Menghapus semua peserta yang bukan bagian dari daftar khusus (retainAll(Collection<?> c)).
+  > Membandingkan dua daftar peserta untuk melihat apakah mereka sama (equals(Object o)).
+
+Penjelasan Implementasi
+
+1. Menambahkan beberapa peserta sekaligus (addAll())
+
+  > addAll(newParticipants) menambahkan semua peserta dari daftar tambahan ke daftar utama.
+  > Peserta yang duplikat tidak akan ditambahkan karena Set tidak mengizinkan elemen ganda.
+
+2. Memeriksa apakah semua peserta VIP sudah terdaftar (containsAll())
+
+  > containsAll(vipParticipants) mengecek apakah semua VIP sudah ada dalam daftar utama.
+
+3. Menghapus peserta yang berada dalam daftar blacklist (removeAll())
+
+  > removeAll(blacklist) menghapus semua peserta yang ada dalam daftar blacklist.
+
+4. Menyaring peserta agar hanya yang ada di daftar final yang dipertahankan (retainAll())
+
+  > retainAll(finalList) hanya mempertahankan peserta yang ada di daftar final.
+
+5. Membandingkan dua daftar peserta (equals())
+
+  > equals(anotherList) mengecek apakah dua Set memiliki elemen yang sama.
+
+
+Kesimpulan
+  * Menggunakan addAll() untuk menambahkan banyak peserta sekaligus tanpa duplikasi.
+  * containsAll() memastikan apakah daftar VIP sudah terdaftar.
+  * removeAll() menghapus elemen yang tidak diinginkan dari daftar utama.
+  * retainAll() hanya mempertahankan elemen tertentu dalam Set.
+  * equals() membandingkan apakah dua Set memiliki elemen yang sama.

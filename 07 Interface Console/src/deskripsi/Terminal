@@ -1,0 +1,19 @@
+1. Apa Itu Terminal?
+📌 Pengertian:
+Terminal adalah sebuah antarmuka berbasis teks yang digunakan untuk berkomunikasi dengan 
+sistem operasi melalui perintah. Dengan terminal, pengguna dapat menjalankan program, mengelola file, 
+dan mengontrol sistem tanpa menggunakan antarmuka grafis (GUI).
+
+📌 Fungsi Utama Terminal:
+  > Menjalankan program dan skrip.
+  > Mengelola file dan direktori (membuat, menghapus, memindahkan).
+  > Menghubungkan ke server melalui SSH.
+  > Menjalankan perintah sistem (misalnya shutdown, restart, update).
+  > Membantu dalam pengembangan perangkat lunak, seperti kompilasi kode.
+
+📌 Jenis Terminal Berdasarkan Sistem Operasi:
+Sistem Operasi	            Terminal Default
+
+Windows	                    Command Prompt (cmd) & PowerShell
+Linux	                      Terminal (Bash, Zsh, Fish, dll.)
+MacOS	                      Terminal (Zsh, Bash, dll.)

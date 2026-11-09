@@ -1,0 +1,33 @@
+1. Pengertian Set dalam Java
+Interface java.util.Set adalah bagian dari Java Collections Framework yang digunakan 
+untuk menyimpan sekumpulan elemen unik. Artinya, Set tidak mengizinkan duplikasi elemen.
+
+2. Tujuan Set
+
+    > Mencegah duplikasi elemen dalam koleksi.
+    > Memungkinkan penyimpanan elemen tanpa urutan yang tetap (tergantung implementasi).
+    > Mempermudah operasi himpunan seperti union, intersection, dan difference.
+
+3. Kegunaan Set
+    
+    > Mengelola data yang tidak boleh memiliki elemen duplikat, seperti daftar ID unik atau koleksi kata kunci.
+    > Mempermudah pencarian elemen dengan kompleksitas yang lebih baik dibandingkan List.
+    > Membantu implementasi algoritma berbasis himpunan.
+
+4. Perbedaan Set dengan Interface Lainnya
+
+Aspek	            Set	                                        List	                                Queue	                            Map
+Duplikasi           Tidak boleh ada duplikat                    boleh ada duplikat                      Boleh ada duplikat                  Tidak boleh ada duplikat pada key
+Urutan	            Tidak terjamin (tergantung implementasi)	Berurutan	                            FIFO (First In First Out)	        Berdasarkan key-value
+Akses Elemen	    Menggunakan iterator	                    Menggunakan indeks	                    Menggunakan metode khusus	        Menggunakan key
+Implementasi Umum	HashSet, LinkedHashSet, TreeSet	            ArrayList, LinkedList	                PriorityQueue, ArrayDeque	        HashMap, TreeMap, LinkedHashMap
+
+5. Penjelasan Implementasi
+    > HashSet: Tidak menjamin urutan elemen dan memiliki performa terbaik untuk pencarian.
+    > LinkedHashSet: Menyimpan elemen sesuai urutan penyisipan.
+    > TreeSet: Mengurutkan elemen secara alami (misalnya alfabetis untuk String).
+
+    Setiap implementasi memiliki kegunaan masing-masing, tergantung pada kebutuhan. 
+    Jika kecepatan lebih penting, gunakan HashSet. 
+    Jika urutan elemen perlu dijaga, gunakan LinkedHashSet. 
+    Jika membutuhkan elemen yang selalu terurut, gunakan TreeSet.
